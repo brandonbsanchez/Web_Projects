@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Storefront Signup</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Storefront Signup</title>
     </head>
     <body>
         <h1>Storefront</h1>
