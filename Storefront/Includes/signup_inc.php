@@ -1,5 +1,7 @@
 <?php
 
+//Verifies signup data and inserts into database
+
 if(isset($_POST['signup_submit'])) { //Prevents user typing file in browser
     require 'dbh_inc.php'; //$conn
 
