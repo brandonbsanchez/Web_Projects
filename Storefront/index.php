@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Storefront</h1>
-        <h2>Login to Continue</h1>
+        <h2>Login</h2>
         <form method="POST" action="Includes/login_inc.php">
             <p>Username:</p>
             <input type="text" name="username">
