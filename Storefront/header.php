@@ -19,8 +19,9 @@
     <header>
         <nav>
             <ul>
-                <li>Shopping Home</li>
-                <li>Manage Stores</li>
+                <li><a href="home.php">Shop</a></li>
+                <li><a href="manage.php">Manage Stores</a></li>
+                <?php echo '<li>Hello '.$_SESSION['username'].'!</li>'; ?>
                 <li>Cart</li>
                 <?php echo '<li>Balance: $'.$_SESSION['balance'].'</li>'; ?>
                 <li>Logout</li>
