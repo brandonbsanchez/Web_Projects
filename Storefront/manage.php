@@ -23,7 +23,9 @@
                 <img src="Uploads/'.$row['img_dest'].'" height=50px>
                 <p>Edit Store</p>
                 <p>Add Items</p>
-                <p>Delete Store</p>';
+                <form method="POST" action="Includes/deletestore_inc.php">
+                <button type="submit" name="delete_store" value='.$row['store_id'].'>Delete Store</button>
+                </form>';
             }
         }
     ?>
