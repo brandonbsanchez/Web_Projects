@@ -24,7 +24,7 @@
                 <?php echo '<li>Hello '.$_SESSION['username'].'!</li>'; ?>
                 <li>Cart</li>
                 <?php echo '<li>Balance: $'.$_SESSION['balance'].'</li>'; ?>
-                <li>Logout</li>
+                <li><a href="Includes/logout_inc.php">Logout</a></li>
             </ul>
         </nav>
     </header>

@@ -23,7 +23,7 @@ if(isset($_POST['store_submit'])){ //User got here legitimately
         if($file_error === 0) { //No errors
             if($file_size < 1000000) { //Less than 1mb
                 $image_full_name = uniqid('', true) . '.'. $file_end_ext;
-                $file_destination = '../Uploads/' . $image_full_name;
+                $file_destination = '../Uploads/Store' . $image_full_name;
 
                 if(empty($store_name) || empty($description)) {
                     header('Location: ../manage.php?error=emptyfields');
@@ -49,17 +49,17 @@ if(isset($_POST['store_submit'])){ //User got here legitimately
                 }
             }
             else {
-                echo 'File size too big!';
+                header('Location: ../manage.php?error=sizeerror');
                 exit();
             }
         }
         else {
-            echo 'Enter proper extension!';
+            header("Location: ../manage.php?error=file");
             exit();
         }
     }
     else {
-        echo 'Enter proper extension!';
+        header("Location: ../manage.php?error=fileext");
         exit();
     }
 }

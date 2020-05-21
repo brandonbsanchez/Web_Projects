@@ -20,7 +20,7 @@
             while($row = mysqli_fetch_assoc($result)) {
                 echo '<h2>'.$row['name'].'</h2>
                 <h3>'.$row['description'].'</h3>
-                <img src="Uploads/'.$row['img_dest'].'" height=50px>
+                <img src="Uploads/Store'.$row['img_dest'].'" height=50px>
                 <p>Edit Store</p>
                 <p>Add Items</p>
                 <form method="POST" action="Includes/deletestore_inc.php">
@@ -35,7 +35,7 @@
         <input type="text" name="store_name">
         <p>Description:</p>
         <input type="text" name="description">
-        <p>Add Image:</p>
+        <p>Add Image (png, jpg, jpeg):</p>
         <input type="file" name="file">
         <input type="submit" value="Add Store" name="store_submit">
     </form>
