@@ -18,14 +18,18 @@
             $result = mysqli_stmt_get_result($statement);
 
             while($row = mysqli_fetch_assoc($result)) {
-                echo '<h2>'.$row['name'].'</h2>
-                <h3>'.$row['description'].'</h3>
-                <img src="Uploads/Store'.$row['img_dest'].'" height=50px>
-                <p>Edit Store</p>
+                echo '<div class="store_card" id="store_'.$row['store_id'].'">
+                <h2>'.$row['name'].'</h2>
+                <p>'.$row['description'].'</p>
+                <img src="Uploads/Store/'.$row['img_dest'].'" height=50px>
+                <form method="POST">
+                <button class="edit_store" type="button" value='.$row['store_id'].'>Edit Store</button>
+                </form>
                 <p>Add Items</p>
                 <form method="POST" action="Includes/deletestore_inc.php">
                 <button type="submit" name="delete_store" value='.$row['store_id'].'>Delete Store</button>
-                </form>';
+                </form>
+                </div>';
             }
         }
     ?>
@@ -39,6 +43,8 @@
         <input type="file" name="file">
         <input type="submit" value="Add Store" name="store_submit">
     </form>
+
+    <script src="Javascript/editstore.js"></script>
 </main>
 
 <?php
