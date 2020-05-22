@@ -19,8 +19,8 @@ if(isset($_POST['delete_store'])) {
         $result = mysqli_stmt_get_result($statement);
 
         if($row = mysqli_fetch_assoc($result)) { //Puts results into array
-            $img_dest = '../Uploads/Store'.$row['img_dest'];
-            
+            $img_dest = '../Uploads/Store/'.$row['img_dest'];
+
             if(!unlink($img_dest)) { //If image doesn't delete
                 header('Location: ../manage.php?error=notdeleted');
                 exit();
