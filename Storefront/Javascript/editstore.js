@@ -18,11 +18,11 @@ function edit_store(event) { //Changes text to form inputs
         <p>Store Name:</p>
         <input type="text" value="${store_name}" name="store_name">
         <p>Description:</p>
-        <input type="text" value=${descr}" name="descr">
+        <input type="text" value="${descr}" name="descr">
         <p>Image (png, jpg, jpeg)</p>
         <img src="${img_loc}" height=50px><br>
         <input type="file" name="file"><br>
-        <input type="submit" value="Save Changes">
+        <button type="submit" name="edit_store" value=${store_id}>Save Changes</button>
     </form>
     <button class="revert" type="button" value=${store_id}'>Revert</button>
     <p>Add Items</p>

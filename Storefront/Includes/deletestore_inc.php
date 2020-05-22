@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['delete_store'])) {
+if(isset($_POST['delete_store'])) { //User got here legitimately
     include_once 'dbh_inc.php';
 
     $store_id = $_POST['delete_store'];

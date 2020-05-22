@@ -40,7 +40,7 @@
         <p>Description:</p>
         <input type="text" name="description">
         <p>Add Image (png, jpg, jpeg):</p>
-        <input type="file" name="file">
+        <input type="file" name="file"><br>
         <input type="submit" value="Add Store" name="store_submit">
     </form>
 
