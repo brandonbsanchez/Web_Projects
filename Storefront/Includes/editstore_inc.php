@@ -2,8 +2,9 @@
 
 if(isset($_POST['edit_store'])){ //User got here legitimately
     include_once 'dbh_inc.php'; //So it doesn't called called twice
-    
-    session_start();
+    include_once 'getfilename_inc.php'; //Sets original file name in session
+
+    //session_start();
 
     $store_name = $_POST['store_name'];
     $description = $_POST['descr'];
@@ -41,7 +42,6 @@ if(isset($_POST['edit_store'])){ //User got here legitimately
         if($file_error === 0) { //No errors
             if($file_size < 1000000) { //Less than 1mb
                 if($is_default) { //File not selected
-                    require 'getfilename_inc.php'; //Sets original file name in session
                     $image_full_name = $_SESSION['img_dest'];
                 }
                 else {
@@ -54,7 +54,7 @@ if(isset($_POST['edit_store'])){ //User got here legitimately
                     exit();
                 }
                 else {
-                    if(!$is_default) { //If image changed
+                    if(!$is_default && $_SESSION['img_dest'] != 'default.jpg') { //If image changed and not default image
                         include_once 'deletefile_inc.php'; //Deletes previous image
                     }
                     $sql = 'UPDATE stores SET name=?, description=?, img_dest=? WHERE store_id=?;';

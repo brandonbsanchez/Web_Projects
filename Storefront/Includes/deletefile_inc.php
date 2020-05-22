@@ -19,10 +19,13 @@ else {
 
     if($row = mysqli_fetch_assoc($result)) { //Puts results into array
         $img_dest = '../Uploads/Store/'.$row['img_dest'];
-        
-        if(!unlink($img_dest)) { //If image doesn't delete
-            header('Location: ../manage.php?error=notdeleted');
-            exit();
+
+        if($img_dest != '../Uploads/Store/default.jpg') //Not the default image
+        {
+            if(!unlink($img_dest)) { //If image doesn't delete
+                header('Location: ../manage.php?error=notdeleted');
+                exit();
+            }
         }
     }
     else {
