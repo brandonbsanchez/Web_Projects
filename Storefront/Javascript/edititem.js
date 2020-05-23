@@ -43,17 +43,6 @@ function edit_item(event) { //Changes text to form inputs
         revert(css_id, item_id, item_name, descr, img_loc, num_in_stock, unit_price);
     })
 }
-// echo '<div class="item_card" id="item_'.$row['item_id'].'">
-// <h2>'.$row['name'].'</h2>
-// <p>'.$row['description'].'</p>
-// <p>'.$row['num_in_stock'].'</p>
-// <p>$'.$row['unit_price'].'</p>
-// <img src="Uploads/Item/'.$row['img_dest'].'" height=50px><br>
-// <button class="edit_item" type="button" value='.$row['item_id'].'>Edit Item</button>
-// <form method="POST" action="Includes/deleteitem_inc.php">
-// <button type="submit" name="delete_item" value='.$row['item_id'].'>Delete Item</button>
-// </form>
-// </div>';
 
 function revert(css_id, item_id, item_name, descr, img_loc, num_in_stock, unit_price) {
     const new_item_card = document.querySelector(`#${css_id}`); //Re-get item card
@@ -63,12 +52,10 @@ function revert(css_id, item_id, item_name, descr, img_loc, num_in_stock, unit_p
                         <p class="description">${descr}</p>
                         <p class="num_in_stock">${num_in_stock}</p>
                         <p class="unit_price">${unit_price}</p>
-                        <img src="${img_loc}" height=50px>
-                        <form method="POST">
-                        <button class="edit_item" type="button" value=${item_id}>Edit item</button>
-                        </form>
+                        <img src="${img_loc}" height=50px><br>
+                        <button class="edit_item" type="button" value=${item_id}>Edit Item</button>
                         <form method="POST" action="Includes/deleteitem_inc.php">
-                        <button type="submit" name="delete_item" value=${item_id}>Delete item</button>
+                        <button type="submit" name="delete_item" value=${item_id}>Delete Item</button>
                         </form>
                         </div>`; //Reverts item card back to static text
     

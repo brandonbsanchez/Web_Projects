@@ -28,7 +28,7 @@
                 <h2>'.$row['name'].'</h2>
                 <p class="description">'.$row['description'].'</p>
                 <p class="num_in_stock">'.$row['num_in_stock'].'</p>
-                <p class="unit_price">$'.$row['unit_price'].'</p>
+                <p class="unit_price">'.$row['unit_price'].'</p>
                 <img src="Uploads/Item/'.$row['img_dest'].'" height=50px><br>
                 <button class="edit_item" type="button" value='.$row['item_id'].'>Edit Item</button>
                 <form method="POST" action="Includes/deleteitem_inc.php">

@@ -2,7 +2,8 @@
 
 if(isset($_POST['delete_store'])) { //User got here legitimately
     include_once 'dbh_inc.php';
-
+    include_once 'deletestoreitems_inc.php';
+    
     $store_id = $_POST['delete_store'];
 
     $sql = 'SELECT * FROM stores WHERE store_id=?;';
