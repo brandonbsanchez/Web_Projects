@@ -1,0 +1,38 @@
+main {
+    width: 75vw;
+    margin: auto;
+}
+#form {
+    background-color: #f3f3f3;
+    border: solid 1px black;
+    justify-content: center;
+    padding: 1.5em 2em;
+    overflow: auto;
+}
+#username {
+    margin-bottom: 0.5em;
+}
+#password {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+h1 {
+    text-align: center;
+    font-size: 3em;
+}
+h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+}
+a {
+    margin-top: 1.5em;
+    float: right;
+}
+#submit {
+    margin-top: 1.5em;
+    float: left;
+}
+.input {
+    width: 98%;
+}
