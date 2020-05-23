@@ -26,9 +26,9 @@
             while($row = mysqli_fetch_assoc($result)) { //Each one is a store card
                 echo '<div class="item_card" id="item_'.$row['item_id'].'">
                 <h2>'.$row['name'].'</h2>
-                <p>'.$row['description'].'</p>
-                <p>'.$row['num_in_stock'].'</p>
-                <p>$'.$row['unit_price'].'</p>
+                <p class="description">'.$row['description'].'</p>
+                <p class="num_in_stock">'.$row['num_in_stock'].'</p>
+                <p class="unit_price">$'.$row['unit_price'].'</p>
                 <img src="Uploads/Item/'.$row['img_dest'].'" height=50px><br>
                 <button class="edit_item" type="button" value='.$row['item_id'].'>Edit Item</button>
                 <form method="POST" action="Includes/deleteitem_inc.php">
@@ -53,7 +53,7 @@
         <input type="submit" value="Add Item" name="item_submit">
     </form>
 
-    <!-- <script src="Javascript/edititem.js"></script> -->
+    <script src="Javascript/edititem.js"></script>
 </main>
 
 <?php
