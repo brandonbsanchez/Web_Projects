@@ -8,7 +8,10 @@
         <link href="CSS/index.css" rel="stylesheet">
     </head>
     <body>
+        <header>
         <h1>Storefront</h1>
+
+        </header>
         <main>
             <h2>Login</h2>
             <div id="form">
@@ -22,5 +25,9 @@
                 <a href="signup.php">Sign Up</a>
             </div>
         </main>
+
+        <footer>
+            <p>Copyright 2020 | Brandon Sanchez</p>
+        </footer>
     </body>
 </html>
