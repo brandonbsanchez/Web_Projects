@@ -9,9 +9,9 @@
     </head>
     <body>
         <header>
-        <h1>Storefront</h1>
-
+            <h1>Storefront</h1>
         </header>
+        
         <main>
             <h2>Login</h2>
             <div id="form">
