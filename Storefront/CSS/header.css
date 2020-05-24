@@ -1,0 +1,47 @@
+nav a {
+    text-decoration: none;
+}
+header button {
+    cursor: pointer;
+    font-family: Helvetica;
+    float: left;
+    font-size: 1.1em;
+    border-radius: 4px;
+    border: solid black 1px;
+    background-color: #1F5669;
+    color: #fff;
+    padding-top: .1em;
+    padding-bottom: .1em;
+}
+header ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #4A2D32;
+}
+header li {
+    padding: 1em;
+    font-size: 1.1em;
+}
+header a {
+    text-decoration: none;
+    color: white;
+}
+#title {
+    font-family: Candara;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    padding: 0.5em 0;
+    margin: 0;
+    flex-basis: 100%;
+    background-color: white;
+}
+@media only screen and (min-width: 700px) {
+    #title {
+        background-color: #4A2D32;
+        flex-basis: auto;
+    }
+}

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Storefront Signup</title>
         <link href="CSS/reset.css" rel="stylesheet">
-        <link href="CSS/signup.css" rel="stylesheet">
+        <link href="CSS/index.css" rel="stylesheet">
     </head>
     <body>
         <header>
