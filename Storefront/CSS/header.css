@@ -22,7 +22,7 @@ header ul {
     background-color: #4A2D32;
 }
 header li {
-    padding: 1em;
+    padding: .7em;
     font-size: 1.1em;
 }
 header a {
@@ -39,9 +39,39 @@ header a {
     flex-basis: 100%;
     background-color: white;
 }
+#dash {
+    display: none;
+}
 @media only screen and (min-width: 700px) {
     #title {
         background-color: #4A2D32;
         flex-basis: auto;
+        color: white;
+        padding: .5em;
+        font-size: 1.8em;
+    }
+    header ul {
+        justify-content: flex-start;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    #dash {
+        display: block;
+        font-family: Candara;
+        font-weight: bold;
+        font-size: 1.8em;
+        padding: .5em;
+        padding-top: .4em;
+        color: white;
+    }
+    header li {
+        padding: .5em;
+        font-size: 1.2em;
+    }
+    header .color {
+        padding: .5em 1em;
+    }
+    header #button {
+        margin-left: auto;
+        padding: .5em;
     }
 }

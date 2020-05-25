@@ -1,0 +1,96 @@
+main body {
+    font-family: Helvetica;
+    position: relative;
+    min-height: 100vh;
+}
+main #form {
+    background-color: #E9DBB6;
+    justify-content: center;
+    padding: 1.5em 2em;
+    overflow: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+#store_name {
+    margin-bottom: 0.5em;
+}
+#store_descr {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+main h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    padding: 0.5em;
+    background-color: #4A2D32;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+main #add_store {
+    width: 20em;
+    margin: 0em 2em;
+}
+main .input {
+    font-family: Helvetica;
+    width: 98%;
+    padding: 2px;
+    font-size: 1.2em;
+    border: 0;
+    border: solid black 1px;
+    border-radius: 4px;
+}
+main #add_image {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+main h1 {
+    font-size: 2em;
+    padding: 1em 0em;
+    margin-left: 1em;
+    text-align: center;
+}
+main .store_card {
+    width: 20em;
+    margin: 0em 0em 0em 2em;
+}
+main .bottom_card {
+    background-color: #E9DBB6;
+    justify-content: center;
+    padding: 1.5em 2em;
+    overflow: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+main #container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main .button {
+    font-family: Helvetica;
+    margin-top: 1.5em;
+    float: left;
+    font-size: 1.1em;
+    border-radius: 4px;
+    border: solid black 1px;
+    background-color: #1F5669;
+    color: #fff;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 700px) {
+    main #container {
+        justify-content: flex-start;
+    }
+    main h1 {
+        text-align: left;
+    }
+}

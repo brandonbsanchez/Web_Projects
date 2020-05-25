@@ -16,6 +16,7 @@
         <link href="CSS/reset.css" rel="stylesheet">
         <link href="CSS/header.css" rel="stylesheet">
         <link href="CSS/footer.css" rel="stylesheet">
+        <link href="CSS/main.css" rel="stylesheet">
     </head>
     <body>
 
@@ -23,10 +24,11 @@
         <nav>
             <ul>
                 <li id="title">Storefront</li>
+                <li id="dash">|</li>
                 <li class="color"><a href="home.php">Shop</a></li>
                 <li class="color"><a href="cart.php">Cart</a></li>
-                <li class="color"><a href="manage.php">Manage</a></li>
-                <li class="color"><button onclick="location.href='Includes/logout_inc.php'" type="button">Logout</button></li>
+                <li class="color" id="manage"><a href="manage.php">Manage</a></li>
+                <li class="color" id="button"><button onclick="location.href='Includes/logout_inc.php'" type="button">Logout</button></li>
             </ul>
         </nav>
     </header>
