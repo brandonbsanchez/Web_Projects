@@ -8,51 +8,55 @@
 
 <main>
     <h1>Items</h1>
-    <?php
+    <div id="container">
+        <?php
+            include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 
-        include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
+            $sql = 'SELECT * FROM items WHERE store_id=?;'; //Gets only for user logged in
+            $statement = mysqli_stmt_init($conn);
 
-        $sql = 'SELECT * FROM items WHERE store_id=?;'; //Gets only for user logged in
-        $statement = mysqli_stmt_init($conn);
-
-        if(!mysqli_stmt_prepare($statement, $sql)) {
-            echo "Failed sql";
-        }
-        else {
-            mysqli_stmt_bind_param($statement, 'i', $_SESSION['store_id']);
-            mysqli_stmt_execute($statement);
-            $result = mysqli_stmt_get_result($statement);
-
-            while($row = mysqli_fetch_assoc($result)) { //Each one is a store card
-                echo '<div class="item_card" id="item_'.$row['item_id'].'">
-                <h2>'.$row['name'].'</h2>
-                <p class="description">'.$row['description'].'</p>
-                <p class="num_in_stock">'.$row['num_in_stock'].'</p>
-                <p class="unit_price">'.$row['unit_price'].'</p>
-                <img src="Uploads/Item/'.$row['img_dest'].'" height=50px><br>
-                <button class="edit_item" type="button" value='.$row['item_id'].'>Edit Item</button>
-                <form method="POST" action="Includes/deleteitem_inc.php">
-                <button type="submit" name="delete_item" value='.$row['item_id'].'>Delete Item</button>
-                </form>
-                </div>';
+            if(!mysqli_stmt_prepare($statement, $sql)) {
+                echo "Failed sql";
             }
-        }
-    ?>
-    <p>Add Item</p>
-    <form method="POST" action="Includes/additem_inc.php" enctype="multipart/form-data">
-        <p>Item Name:</p>
-        <input type="text" name="item_name">
-        <p>Description:</p>
-        <input type="text" name="description">
-        <p>Quantity:</p>
-        <input type="text" name="num_in_stock">
-        <p>Unit Price:</p>
-        <input type="text" name="unit_price">
-        <p>Add Image (png, jpg, jpeg):</p>
-        <input type="file" name="file"><br>
-        <input type="submit" value="Add Item" name="item_submit">
-    </form>
+            else {
+                mysqli_stmt_bind_param($statement, 'i', $_SESSION['store_id']);
+                mysqli_stmt_execute($statement);
+                $result = mysqli_stmt_get_result($statement);
 
+                while($row = mysqli_fetch_assoc($result)) { //Each one is a store card
+                    echo '<div class="store_card" id="item_'.$row['item_id'].'">
+                    <h2>'.$row['name'].'</h2>
+                    <div class="bottom_card">
+                        <img src="Uploads/Item/'.$row['img_dest'].'" height=80px>
+                        <p class="description">'.$row['description'].'</p>
+                        <p class="num_in_stock">'.$row['num_in_stock'].'</p>
+                        <p class="unit_price">$'.$row['unit_price'].'</p>
+                        <button class="edit_item button" type="button" value='.$row['item_id'].'>Edit Item</button>
+                        <form method="POST" action="Includes/deleteitem_inc.php">
+                        <button class="button delete" type="submit" name="delete_item" value='.$row['item_id'].'>Delete Item</button>
+                        </form>
+                    </div>
+                    </div>';
+                }
+            }
+        ?>
+        <div id="add_store">
+            <h2>Add Item</h2>
+            <form method="POST" action="Includes/additem_inc.php" enctype="multipart/form-data" class="form">
+                <p class="store_name">Item Name</p>
+                <input type="text" name="item_name" class="input">
+                <p class="store_descr">Description</p>
+                <input type="text" name="description" class="input">
+                <p class="store_descr">Quantity</p>
+                <input type="text" name="num_in_stock" class="input">
+                <p class="store_descr">Unit Price</p>
+                <input type="text" name="unit_price" class="input">
+                <p class="add_image">Add Image (png, jpg, jpeg)</p>
+                <input type="file" name="file"><br>
+                <input class="button" type="submit" value="Add Item" name="item_submit" id="add_button">
+            </form>
+        </div>
+    </div>
     <script src="Javascript/edititem.js"></script>
 </main>
 
