@@ -121,7 +121,20 @@ main .edit_form {
 main .edit_item_form {
     padding-bottom: .9em;
 }
+main .item_titles {
+    padding-top: 1.9em;
+    font-size: 1.1em;
 
+}
+main .item_descr {
+    padding-top: .3em;
+}
+main .top {
+    padding-top: 1em;
+}
+main .edit_item {
+    margin-top: 3em;
+}
 @media only screen and (min-width: 700px) {
     main #container {
         justify-content: flex-start;

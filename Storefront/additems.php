@@ -28,9 +28,11 @@
                     <h2>'.$row['name'].'</h2>
                     <div class="bottom_card">
                         <img src="Uploads/Item/'.$row['img_dest'].'" height=80px>
-                        <p class="description">'.$row['description'].'</p>
-                        <p class="num_in_stock">'.$row['num_in_stock'].'</p>
-                        <p class="unit_price">$'.$row['unit_price'].'</p>
+                        <p class="item_descr top description">'.$row['description'].'</p>
+                        <h3 class="item_titles">Number in Stock</h3>
+                        <p class="item_descr num_in_stock">'.$row['num_in_stock'].'</p>
+                        <h3 class="item_titles">Price</h3>
+                        <p class="item_descr unit_price">'.$row['unit_price'].'</p>
                         <button class="edit_item button" type="button" value='.$row['item_id'].'>Edit Item</button>
                         <form method="POST" action="Includes/deleteitem_inc.php">
                         <button class="button delete" type="submit" name="delete_item" value='.$row['item_id'].'>Delete Item</button>
