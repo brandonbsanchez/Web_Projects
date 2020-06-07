@@ -24,13 +24,13 @@
                     <h2>'.$row['name'].'</h2>
                     <div class="bottom_card">
                         <p>'.$row['description'].'</p>
-                        <img src="Uploads/Store/'.$row['img_dest'].'" height=50px><br>
-                        <button class="edit_store" type="button" value='.$row['store_id'].'>Edit Store</button>
+                        <img src="Uploads/Store/'.$row['img_dest'].'" height=80px><br>
+                        <button class="edit_store button" type="button" value='.$row['store_id'].'>Edit Store</button><br>
                         <form method="POST" action="additems.php">
-                        <button class="add_item" type="submit" name="add_item" value='.$row['store_id'].'>Add Items</button>
+                        <button class="add_item button" type="submit" name="add_item" value='.$row['store_id'].'>Add Items</button>
                         </form>
                         <form method="POST" action="Includes/deletestore_inc.php">
-                        <button type="submit" name="delete_store" value='.$row['store_id'].'>Delete Store</button>
+                        <button type="submit" name="delete_store" value='.$row['store_id'].' class="delete button">Delete Store</button>
                         </form>
                     </div>
                     </div>';
@@ -46,7 +46,7 @@
                 <input type="text" name="description" class="input">
                 <p id="add_image">Add Image (png, jpg, jpeg)</p>
                 <input type="file" name="file"><br>
-                <input type="submit" value="Add Store" name="store_submit" class="button">
+                <input type="submit" value="Add Store" name="store_submit" class="button" id="add_button">
             </form>
         </div>
     </div>

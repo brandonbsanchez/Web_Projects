@@ -11,6 +11,7 @@ main #form {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 3em;
 }
 #store_name {
     margin-bottom: 0.5em;
@@ -21,9 +22,8 @@ main #form {
 }
 main h2 {
     font-size: 1.5em;
-    margin-top: 1em;
     padding: 0.5em;
-    background-color: #4A2D32;
+    background-color: #153045;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     color: white;
@@ -32,7 +32,7 @@ main h2 {
 }
 main #add_store {
     width: 20em;
-    margin: 0em 2em;
+    margin-left: 2em;
 }
 main .input {
     font-family: Helvetica;
@@ -49,9 +49,9 @@ main #add_image {
 }
 main h1 {
     font-size: 2em;
-    padding: 1em 0em;
+    padding: 1em 0em 0em 0em;
     margin-left: 1em;
-    text-align: center;
+    margin-bottom: 1em;
 }
 main .store_card {
     width: 20em;
@@ -66,6 +66,7 @@ main .bottom_card {
     border-bottom-right-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    margin-bottom: 3em;
 }
 main #container {
     display: flex;
@@ -75,7 +76,6 @@ main #container {
 main .button {
     font-family: Helvetica;
     margin-top: 1.5em;
-    float: left;
     font-size: 1.1em;
     border-radius: 4px;
     border: solid black 1px;
@@ -84,6 +84,15 @@ main .button {
     padding-top: .1em;
     padding-bottom: .1em;
     cursor: pointer;
+}
+main #add_button {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.9em;
+}
+main .delete {
+    background-color: #89222F;
 }
 
 @media only screen and (min-width: 700px) {
