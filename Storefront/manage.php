@@ -39,12 +39,12 @@
         ?>
         <div id="add_store">
             <h2>Add Store</h2>
-            <form method="POST" action="Includes/addstore_inc.php" enctype="multipart/form-data" id="form">
-                <p id="store_name">Store Name</p>
+            <form method="POST" action="Includes/addstore_inc.php" enctype="multipart/form-data" class="form">
+                <p class="store_name">Store Name</p>
                 <input type="text" name="store_name" class="input">
-                <p id="store_descr">Description</p>
+                <p class="store_descr">Description</p>
                 <input type="text" name="description" class="input">
-                <p id="add_image">Add Image (png, jpg, jpeg)</p>
+                <p class="add_image">Add Image (png, jpg, jpeg)</p>
                 <input type="file" name="file"><br>
                 <input type="submit" value="Add Store" name="store_submit" class="button" id="add_button">
             </form>
