@@ -1,9 +1,5 @@
 <?php
     require 'header.php';
-
-    if(isset($_POST['add_item'])) {
-        $_SESSION['store_id'] = $_POST['add_item'];
-    }
 ?>
 
 <main>
@@ -40,11 +36,19 @@
 
                     $cart_total += $row['quantity'] * $row['unit_price'];
                 }
-                $_SESSION['user_id'] = $cart_total;
+                $_SESSION['cart_total'] = $cart_total;
             }
         ?>
     </div>
-    <?php echo 'Cart Total: $'.$cart_total; ?>
+    <?php 
+        echo '<p>Your Balance: $'.$_SESSION['balance'].'</p>';
+        echo '<p>Cart Total:   $'.$_SESSION['cart_total'].'</p>'; 
+    ?>
+    <h3>Add Balance</h3>
+    <form method="POST" action="Includes/addbalance_inc.php">
+        <input type="text" name="dollars"><br>
+        <button type="submit" name="add_balance">Add To Balance</button>
+    </form>
 </main>
 
 <?php
