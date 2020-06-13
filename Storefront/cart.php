@@ -52,6 +52,7 @@
     <form method="POST" action="Includes/purchase_inc.php">
         <button type="submit" name="purchase">Purchase Items</button>
     </form>
+    <a href="pastorders.php">View Past Orders</a>
 </main>
 
 <?php
