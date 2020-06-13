@@ -49,6 +49,9 @@
         <input type="text" name="dollars"><br>
         <button type="submit" name="add_balance">Add To Balance</button>
     </form>
+    <form method="POST" action="Includes/purchase_inc.php">
+        <button type="submit" name="purchase">Purchase Items</button>
+    </form>
 </main>
 
 <?php
