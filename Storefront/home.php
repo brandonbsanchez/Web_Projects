@@ -3,8 +3,6 @@
 ?>
 
 <main>
-    <?php echo '<li>Balance: $'.$_SESSION['balance'].'</li>'; ?>
-    <?php echo '<li>Hello '.$_SESSION['username'].'!</li>'; ?>
     <h1>Stores</h1>
     <div id="container">
     <?php
@@ -25,9 +23,9 @@
                 <h2>'.$row['name'].'</h2>
                 <div class="bottom_card">
                     <img src="Uploads/Store/'.$row['img_dest'].'" height=80px><br>
-                    <p>'.$row['description'].'</p>
+                    <p class="store_descr">'.$row['description'].'</p>
                     <form method="POST" action="viewitems.php">
-                    <button class="add_item button" type="submit" name="add_item" value='.$row['store_id'].'>View Items</button>
+                    <button class="view_items button" type="submit" name="add_item" value='.$row['store_id'].'>View Items</button>
                     </form>
                 </div>
                 </div>';

@@ -28,6 +28,7 @@
                 <li class="color"><a href="home.php">Shop</a></li>
                 <li class="color"><a href="cart.php">Cart</a></li>
                 <li class="color" id="manage"><a href="manage.php">Manage</a></li>
+                <?php echo '<li class="color" id="header_name">'.$_SESSION['username'].'</li>'; ?>
                 <li class="color" id="button"><button onclick="location.href='Includes/logout_inc.php'" type="button">Logout</button></li>
             </ul>
         </nav>

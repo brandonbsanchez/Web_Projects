@@ -39,6 +39,9 @@ header a {
     flex-basis: 100%;
     background-color: white;
 }
+header .color {
+    color: white;
+}
 #dash {
     display: none;
 }
@@ -71,7 +74,9 @@ header a {
         padding: .5em 1em;
     }
     header #button {
-        margin-left: auto;
         padding: .5em;
+    }
+    header #header_name {
+        margin-left: auto;
     }
 }

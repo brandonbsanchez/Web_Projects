@@ -3,7 +3,8 @@
 ?>
 
 <main>
-    <h1>Your Past Orders</h1>
+    <h1 id="past_title">Your Past Orders</h1>
+    <a id="back_link" href="cart.php">Back to Cart</a>
     <?php
         include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 
@@ -24,12 +25,12 @@
                 if($i != 0){
                     if($past_order_id != $order_id) {
                         echo '</div>';
-                        echo '<h3>Order On '.$row['date_time'].'</h3>';
+                        echo '<h3 class="order_date">Order On '.$row['date_time'].'</h3>';
                         echo '<div id="container">';
                     }
                 }
                 else {
-                    echo '<h3>Order On '.$row['date_time'].'</h3>';
+                    echo '<h3 id="top_order" class="order_date">Order On '.$row['date_time'].'</h3>';
                     echo '<div id="container">';
                 }
                 echo '<div class="store_card" id="item_'.$row['item_id'].'">
@@ -38,7 +39,7 @@
                     <img src="Uploads/Item/'.$row['img_dest'].'" height=80px>
                     <p class="item_descr top description">'.$row['description'].'</p>
                     <p class="item_descr num_in_stock">Number Purchased: '.$row['quantity'].'</p>
-                    <p class="item_descr unit_price">Price: '.$row['unit_price'].'</p>
+                    <p class="item_descr unit_price">Unit Price: $'.$row['unit_price'].'</p>
                 </div>
                 </div>';
                 $past_order_id = $order_id;
@@ -47,7 +48,6 @@
             echo '</div>';
         }
     ?>
-    <a href="cart.php">Back to Cart</a>
 </main>
 
 <?php

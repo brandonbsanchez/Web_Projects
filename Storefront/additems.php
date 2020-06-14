@@ -53,7 +53,7 @@
                 <input type="text" name="num_in_stock" class="input">
                 <p class="store_descr">Unit Price</p>
                 <input type="text" name="unit_price" class="input">
-                <p class="add_image">Add Image (png, jpg, jpeg)</p>
+                <p class="add_image">Add Image (Optional)</p>
                 <input type="file" name="file"><br>
                 <input class="button" type="submit" value="Add Item" name="item_submit" id="add_button">
             </form>

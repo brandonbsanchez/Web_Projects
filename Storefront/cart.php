@@ -39,20 +39,29 @@
                 $_SESSION['cart_total'] = $cart_total;
             }
         ?>
+        <div class="store_card">
+            <h2>Add Balance</h2>
+            <div class="bottom_card">
+                <form method="POST" action="Includes/addbalance_inc.php">
+                    <?php echo '<p>Current Balance: $'.$_SESSION['balance'].'</p>'; ?>
+                    <p>Amount to Add</p>
+                    <input class="input" type="text" name="dollars"><br>
+                    <button class="button" type="submit" name="add_balance">Add To Balance</button><br>
+                </form>
+            </div>
+        </div>
+
+        <div class="store_card">
+            <h2>Purchase Items</h2>
+            <div class="bottom_card">
+                <a href="pastorders.php">View Past Orders</a>
+                <?php echo '<p>Cart Total:   $'.$_SESSION['cart_total'].'</p>'; ?>
+                <form method="POST" action="Includes/purchase_inc.php">
+                    <button class="button" type="submit" name="purchase">Purchase</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <?php 
-        echo '<p>Your Balance: $'.$_SESSION['balance'].'</p>';
-        echo '<p>Cart Total:   $'.$_SESSION['cart_total'].'</p>'; 
-    ?>
-    <h3>Add Balance</h3>
-    <form method="POST" action="Includes/addbalance_inc.php">
-        <input type="text" name="dollars"><br>
-        <button type="submit" name="add_balance">Add To Balance</button>
-    </form>
-    <form method="POST" action="Includes/purchase_inc.php">
-        <button type="submit" name="purchase">Purchase Items</button>
-    </form>
-    <a href="pastorders.php">View Past Orders</a>
 </main>
 
 <?php

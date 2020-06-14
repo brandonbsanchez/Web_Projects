@@ -135,6 +135,32 @@ main .top {
 main .edit_item {
     margin-top: 3em;
 }
+main #balance {
+    margin-left: 2em;
+    margin-bottom: 2em;
+}
+main #balance_title {
+    margin-bottom: .5em;
+}
+main .store_descr {
+    margin-top: 1em;
+}
+main .view_items {
+    margin-top: 1em;
+}
+main .order_date {
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+main #top_order {
+    margin-top: 1em;
+}
+main #back_link {
+    margin-left: 2em;
+}
+main #past_title {
+    margin-bottom: .5em;
+}
 @media only screen and (min-width: 700px) {
     main #container {
         justify-content: flex-start;

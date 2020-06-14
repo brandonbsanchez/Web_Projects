@@ -7,7 +7,8 @@
 ?>
 
 <main>
-    <h1>Items</h1>
+    <h1 id="balance_title">Items</h1>
+    <?php echo '<p id="balance">Balance: $'.$_SESSION['balance'].'</p>'; ?>
     <div id="container">
         <?php
             include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
@@ -30,11 +31,11 @@
                         <img src="Uploads/Item/'.$row['img_dest'].'" height=80px>
                         <p class="item_descr top description">'.$row['description'].'</p>
                         <p class="item_descr num_in_stock">Number in Stock: '.$row['num_in_stock'].'</p>
-                        <p class="item_descr unit_price">Price: '.$row['unit_price'].'</p>
+                        <p class="item_descr unit_price">Unit Price: $'.$row['unit_price'].'</p>
                         <p>Number to Purchase</p>
                         <form method="POST" action="Includes/purchaseitem_inc.php">
                         <input type="text" name="num_to_purch" class="input">
-                        <button class="edit_item button" name="purchase_item" type="submit" value='.$row['item_id'].'>Purchase Item</button>
+                        <button class="edit_item button" name="purchase_item" type="submit" value='.$row['item_id'].'>Add to Cart</button>
                         </form>
                     </div>
                     </div>';

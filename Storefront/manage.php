@@ -44,7 +44,7 @@
                 <input type="text" name="store_name" class="input">
                 <p class="store_descr">Description</p>
                 <input type="text" name="description" class="input">
-                <p class="add_image">Add Image (png, jpg, jpeg)</p>
+                <p class="add_image">Add Image (Optional)</p>
                 <input type="file" name="file"><br>
                 <input type="submit" value="Add Store" name="store_submit" class="button" id="add_button">
             </form>
