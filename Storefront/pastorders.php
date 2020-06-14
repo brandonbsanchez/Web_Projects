@@ -33,13 +33,14 @@
                     echo '<h3 id="top_order" class="order_date">Order On '.$row['date_time'].'</h3>';
                     echo '<div id="container">';
                 }
+                $format_price = number_format((float)$row['unit_price'], 2, '.', '');
                 echo '<div class="store_card" id="item_'.$row['item_id'].'">
                 <h2>'.$row['name'].'</h2>
                 <div class="bottom_card">
                     <img src="Uploads/Item/'.$row['img_dest'].'" height=80px>
                     <p class="item_descr top description">'.$row['description'].'</p>
-                    <p class="item_descr num_in_stock">Number Purchased: '.$row['quantity'].'</p>
-                    <p class="item_descr unit_price">Unit Price: $'.$row['unit_price'].'</p>
+                    <p class="item_descr num_in_stock"><span class="bold">Number Purchased: </span>'.$row['quantity'].'</p>
+                    <p class="item_descr unit_price"><span class="bold">Unit Price: </span>$'.$format_price.'</p>
                 </div>
                 </div>';
                 $past_order_id = $order_id;

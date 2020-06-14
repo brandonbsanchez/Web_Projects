@@ -24,6 +24,7 @@
                 $result = mysqli_stmt_get_result($statement);
 
                 while($row = mysqli_fetch_assoc($result)) { //Each one is a store card
+                    $format_price = number_format((float)$row['unit_price'], 2, '.', '');
                     echo '<div class="store_card" id="item_'.$row['item_id'].'">
                     <h2>'.$row['name'].'</h2>
                     <div class="bottom_card">
@@ -32,7 +33,7 @@
                         <h3 class="item_titles">Number in Stock</h3>
                         <p class="item_descr num_in_stock">'.$row['num_in_stock'].'</p>
                         <h3 class="item_titles">Price</h3>
-                        <p class="item_descr unit_price">'.$row['unit_price'].'</p>
+                        <p class="item_descr unit_price">'.$format_price.'</p>
                         <button class="edit_item button" type="button" value='.$row['item_id'].'>Edit Item</button>
                         <form method="POST" action="Includes/deleteitem_inc.php">
                         <button class="button delete" type="submit" name="delete_item" value='.$row['item_id'].'>Delete Item</button>

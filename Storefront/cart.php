@@ -36,6 +36,7 @@
 
                     $cart_total += $row['quantity'] * $row['unit_price'];
                 }
+                $format_cart = number_format((float)$cart_total, 2, '.', '');
                 $_SESSION['cart_total'] = $cart_total;
             }
         ?>
@@ -45,7 +46,7 @@
                 <form method="POST" action="Includes/addbalance_inc.php">
                     <p id="amount_add">Amount to Add</p>
                     <input class="input" type="text" name="dollars"><br>
-                    <?php echo '<p id="current_balance">Current Balance: $'.$_SESSION['balance'].'</p>'; ?>
+                    <?php echo '<p id="current_balance">Current Balance: $'. number_format((float)$_SESSION['balance'], 2, '.', '').'</p>'; ?>
                     <button class="button" id="add_balance" type="submit" name="add_balance">Add To Balance</button><br>
                 </form>
             </div>
@@ -55,7 +56,7 @@
             <h2>Purchase Items</h2>
             <div class="bottom_card">
                 <a href="pastorders.php">View Past Orders</a>
-                <?php echo '<p id="cart_total">Cart Total:   $'.$_SESSION['cart_total'].'</p>'; ?>
+                <?php echo '<p id="cart_total">Cart Total:   $'.$format_cart.'</p>'; ?>
                 <form method="POST" action="Includes/purchase_inc.php">
                     <button class="button" id="purchase" type="submit" name="purchase">Purchase</button>
                 </form>

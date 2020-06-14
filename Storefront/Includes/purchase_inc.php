@@ -20,7 +20,6 @@ if(isset($_POST['purchase'])){ //User got here legitimately
     else {
         mysqli_stmt_bind_param($statement, 'i', $user_id); //Inputs variables into ?
         mysqli_stmt_execute($statement);
-
         $_SESSION['balance'] -= $_SESSION['cart_total'];
         $_SESSION['cart_total'] = 0;
         $sql = 'SELECT order_id FROM orders ORDER BY order_id DESC LIMIT 1;'; //Selects last order id

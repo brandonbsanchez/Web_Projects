@@ -25,13 +25,14 @@
                 $result = mysqli_stmt_get_result($statement);
 
                 while($row = mysqli_fetch_assoc($result)) { //Each one is an item card
+                    $format_price = number_format((float)$row['unit_price'], 2, '.', '');
                     echo '<div class="store_card" id="item_'.$row['item_id'].'">
                     <h2>'.$row['name'].'</h2>
                     <div class="bottom_card">
                         <img src="Uploads/Item/'.$row['img_dest'].'" height=80px>
                         <p class="item_descr top description">'.$row['description'].'</p>
-                        <p class="item_descr num_in_stock">Number in Stock: '.$row['num_in_stock'].'</p>
-                        <p class="item_descr unit_price">Unit Price: $'.$row['unit_price'].'</p>
+                        <p class="item_descr num_in_stock"><span class="bold">Number in Stock: </span>'.$row['num_in_stock'].'</p>
+                        <p class="item_descr unit_price"><span class="bold">Unit Price: </span>$'.$format_price.'</p>
                         <p class="num_to_purch">Number to Purchase</p>
                         <form method="POST" action="Includes/purchaseitem_inc.php">
                         <input type="text" name="num_to_purch" class="input">

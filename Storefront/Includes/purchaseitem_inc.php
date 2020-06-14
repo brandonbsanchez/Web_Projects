@@ -43,7 +43,6 @@ if(isset($_POST['purchase_item'])){ //User got here legitimately
                 //     exit();
                 // }
                 else {
-                    $_SESSION['balance'] -= $order_price;
                     $sql = 'INSERT INTO carts VALUES (?, ?, ?);'; //(user_id, item_id, quantity)
                     $statement = mysqli_stmt_init($conn);
 

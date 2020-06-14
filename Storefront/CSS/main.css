@@ -89,7 +89,7 @@ main #add_button {
     display: table;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2.9em;
+    margin-top: 4em;
 }
 main .delete {
     background-color: #89222F;
@@ -180,7 +180,21 @@ main #cart_total {
 main #purchase {
     margin-top: 3em;
 }
-
+main #your_stores {
+    margin-top: 2.9em;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+main .bold {
+    font-weight: bold;
+}
+main .manage_descr {
+    margin-bottom: .5em;
+}
+main .edit_store {
+    margin-top: 1.1em;
+}
 @media only screen and (min-width: 700px) {
     main #container {
         justify-content: flex-start;

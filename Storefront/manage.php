@@ -23,7 +23,7 @@
                     echo '<div class="store_card" id="store_'.$row['store_id'].'">
                     <h2>'.$row['name'].'</h2>
                     <div class="bottom_card">
-                        <p>'.$row['description'].'</p>
+                        <p class="manage_descr">'.$row['description'].'</p>
                         <img src="Uploads/Store/'.$row['img_dest'].'" height=80px><br>
                         <button class="edit_store button" type="button" value='.$row['store_id'].'>Edit Store</button><br>
                         <form method="POST" action="additems.php">
@@ -46,7 +46,7 @@
                 <input type="text" name="description" class="input">
                 <p class="add_image">Add Image (Optional)</p>
                 <input type="file" name="file"><br>
-                <input type="submit" value="Add Store" name="store_submit" class="button" id="add_button">
+                <input type="submit" value="Add Store" name="store_submit" class="button" id="your_stores">
             </form>
         </div>
     </div>
