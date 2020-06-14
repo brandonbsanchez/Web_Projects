@@ -49,7 +49,7 @@ if(isset($_POST['item_submit'])){ //User got here legitimately
                     exit();
                 }
                 else {
-                    $sql = 'INSERT INTO items VALUES (DEFAULT, ?, ?, ?, ?, ?, ?);'; 
+                    $sql = 'INSERT INTO bsanchez_items VALUES (DEFAULT, ?, ?, ?, ?, ?, ?);'; 
                     //(item_id, store_id, name, descr, img_dest, num_in_stock, unit_price)
                     $statement = mysqli_stmt_init($conn);
 

@@ -13,7 +13,7 @@ if(isset($_POST['purchase_item'])){ //User got here legitimately
         exit();
     }
     else {
-        $sql = 'SELECT num_in_stock, unit_price FROM items WHERE item_id=?;'; //(user_id, item_id, quantity)
+        $sql = 'SELECT num_in_stock, unit_price FROM bsanchez_items WHERE item_id=?;'; //(user_id, item_id, quantity)
         $statement = mysqli_stmt_init($conn);
         
         if(!mysqli_stmt_prepare($statement, $sql)) { //If statement fails
@@ -43,7 +43,7 @@ if(isset($_POST['purchase_item'])){ //User got here legitimately
                 //     exit();
                 // }
                 else {
-                    $sql = 'INSERT INTO carts VALUES (?, ?, ?);'; //(user_id, item_id, quantity)
+                    $sql = 'INSERT INTO bsanchez_carts VALUES (?, ?, ?);'; //(user_id, item_id, quantity)
                     $statement = mysqli_stmt_init($conn);
 
                     if(!mysqli_stmt_prepare($statement, $sql)) { //If statement fails
@@ -54,7 +54,7 @@ if(isset($_POST['purchase_item'])){ //User got here legitimately
                         mysqli_stmt_bind_param($statement, 'iii', $user_id, $item_id, $num_to_buy); //Inputs variables into ?
                         mysqli_stmt_execute($statement);
 
-                        $sql = 'UPDATE items SET num_in_stock=? WHERE item_id=?;'; //(user_id, item_id, quantity)
+                        $sql = 'UPDATE bsanchez_items SET num_in_stock=? WHERE item_id=?;'; //(user_id, item_id, quantity)
                         $statement = mysqli_stmt_init($conn);
                         
                         if(!mysqli_stmt_prepare($statement, $sql)) { //If statement fails
@@ -67,7 +67,7 @@ if(isset($_POST['purchase_item'])){ //User got here legitimately
                             mysqli_stmt_bind_param($statement, 'ii', $new_stock, $item_id); //Inputs variables into ?
                             mysqli_stmt_execute($statement);
 
-                            $sql = 'UPDATE users SET balance=? WHERE user_id=?;';
+                            $sql = 'UPDATE bsanchez_users SET balance=? WHERE user_id=?;';
                             $statement = mysqli_stmt_init($conn);
 
                             if(!mysqli_stmt_prepare($statement, $sql)) { //If statement fails

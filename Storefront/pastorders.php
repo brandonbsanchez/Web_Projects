@@ -8,7 +8,7 @@
     <?php
         include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 
-        $sql = 'SELECT * FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN items i ON i.item_id = oi.item_id 
+        $sql = 'SELECT * FROM bsanchez_orders o JOIN bsanchez_order_items oi ON o.order_id = oi.order_id JOIN bsanchez_items i ON i.item_id = oi.item_id 
         WHERE user_id=?;'; //Gets only for user logged in
         $statement = mysqli_stmt_init($conn);
 

@@ -8,7 +8,7 @@
         <?php
             include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 
-            $sql = 'SELECT * FROM carts JOIN items ON carts.item_id = items.item_id WHERE user_id=?;'; //Gets only for user logged in
+            $sql = 'SELECT * FROM bsanchez_carts c JOIN bsanchez_items i ON c.item_id = i.item_id WHERE user_id=?;'; //Gets only for user logged in
             $statement = mysqli_stmt_init($conn);
 
             if(!mysqli_stmt_prepare($statement, $sql)) {
@@ -27,7 +27,7 @@
                         <img src="Uploads/Item/'.$row['img_dest'].'" height=80px>
                         <p class="item_descr top description">'.$row['description'].'</p>
                         <p class="item_descr num_in_stock">Number in Stock: '.$row['quantity'].'</p>
-                        <p class="item_descr unit_price">Price: '.$row['unit_price'].'</p>
+                        <p class="item_descr unit_price">Price: $'.$row['unit_price'].'</p>
                         <form method="POST" action="Includes/removeitem_inc.php">
                         <button class="button delete" type="submit" name="remove_item" value='.$row['item_id'].'>Remove Item</button>
                         </form>

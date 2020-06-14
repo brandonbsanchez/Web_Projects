@@ -6,7 +6,7 @@ if(isset($_POST['delete_store'])) { //User got here legitimately
     
     $store_id = $_POST['delete_store'];
 
-    $sql = 'SELECT * FROM stores WHERE store_id=?;';
+    $sql = 'SELECT * FROM bsanchez_stores WHERE store_id=?;';
     $statement = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_prepare($statement, $sql)) { //If connection fails
@@ -30,7 +30,7 @@ if(isset($_POST['delete_store'])) { //User got here legitimately
                 }
             }
 
-            $sql = 'DELETE FROM stores WHERE store_id=?;';
+            $sql = 'DELETE FROM bsanchez_stores WHERE store_id=?;';
             $statement = mysqli_stmt_init($conn);
 
             if(!mysqli_stmt_prepare($statement, $sql)) { //If connection fails

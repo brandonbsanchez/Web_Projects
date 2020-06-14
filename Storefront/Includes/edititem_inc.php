@@ -60,7 +60,7 @@ if(isset($_POST['edit_item'])){ //User got here legitimately
                     if(!$is_default && $_SESSION['img_dest'] != 'default.jpg') { //If image changed and not default image
                         include_once 'deletefileitem_inc.php'; //Deletes previous image
                     }
-                    $sql = 'UPDATE items SET name=?, description=?, img_dest=?, num_in_stock=?, unit_price=? WHERE item_id=?;';
+                    $sql = 'UPDATE bsanchez_items SET name=?, description=?, img_dest=?, num_in_stock=?, unit_price=? WHERE item_id=?;';
                     $statement = mysqli_stmt_init($conn);
 
                     if(!mysqli_stmt_prepare($statement, $sql)) { //If statement fails

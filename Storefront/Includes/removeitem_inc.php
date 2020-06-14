@@ -7,7 +7,7 @@ if(isset($_POST['remove_item'])) { //User got here legitimately
     $user_id = $_SESSION['user_id'];
     $item_id = $_POST['remove_item'];
 
-    $sql = 'DELETE FROM carts WHERE item_id=? AND user_id=?;';
+    $sql = 'DELETE FROM bsanchez_carts WHERE item_id=? AND user_id=?;';
     $statement = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_prepare($statement, $sql)) { //If connection fails

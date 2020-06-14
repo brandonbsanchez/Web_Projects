@@ -11,7 +11,7 @@ if(isset($_POST['login_submit'])) { //Prevents user typing file in browser
         exit();
     }
     else {
-        $sql = 'SELECT * FROM users WHERE username=?';
+        $sql = 'SELECT * FROM bsanchez_users WHERE username=?';
         $statement = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($statement, $sql)) { //If connection fails

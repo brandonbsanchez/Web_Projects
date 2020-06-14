@@ -11,7 +11,7 @@ if(isset($_POST['add_balance'])) { //User got here legitimately
         $user_id = $_SESSION['user_id'];
         $new_balance = $_POST['dollars'] + $_SESSION['balance'];
 
-        $sql = 'UPDATE users SET balance=? WHERE user_id=?;'; //(user_id, item_id, quantity)
+        $sql = 'UPDATE bsanchez_users SET balance=? WHERE user_id=?;'; //(user_id, item_id, quantity)
         $statement = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($statement, $sql)) { //If connection fails

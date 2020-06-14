@@ -8,7 +8,7 @@
     <?php
         include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 
-        $sql = 'SELECT * FROM stores;'; //Gets only for user logged in
+        $sql = 'SELECT * FROM bsanchez_stores;'; //Gets only for user logged in
         $statement = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($statement, $sql)) {

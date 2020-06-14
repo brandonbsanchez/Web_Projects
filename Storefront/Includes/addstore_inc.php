@@ -46,7 +46,7 @@ if(isset($_POST['store_submit'])){ //User got here legitimately
                     exit();
                 }
                 else {
-                    $sql = 'INSERT INTO stores VALUES (DEFAULT, ?, ?, ?, ?);'; //(store_id, user_id, name, description, img_dest)
+                    $sql = 'INSERT INTO bsanchez_stores VALUES (DEFAULT, ?, ?, ?, ?);'; //(store_id, user_id, name, description, img_dest)
                     $statement = mysqli_stmt_init($conn);
 
                     if(!mysqli_stmt_prepare($statement, $sql)) { //If statement fails

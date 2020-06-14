@@ -22,7 +22,7 @@ if(isset($_POST['signup_submit'])) { //Prevents user typing file in browser
         exit();
     }
     else {
-        $sql = 'SELECT username FROM users WHERE username=?;';
+        $sql = 'SELECT username FROM bsanchez_users WHERE username=?;';
         $statement = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($statement, $sql)) { //If connection fails
@@ -41,7 +41,7 @@ if(isset($_POST['signup_submit'])) { //Prevents user typing file in browser
                 exit();
             }
             else {
-                $sql = "INSERT INTO users VALUES (DEFAULT, ?, ?, DEFAULT);"; //(id, username, password, balance=0)
+                $sql = "INSERT INTO bsanchez_users VALUES (DEFAULT, ?, ?, DEFAULT);"; //(id, username, password, balance=0)
                 $statement = mysqli_stmt_init($conn);
 
                 if(!mysqli_stmt_prepare($statement, $sql)) { //If connection fails

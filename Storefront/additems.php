@@ -12,7 +12,7 @@
         <?php
             include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 
-            $sql = 'SELECT * FROM items WHERE store_id=?;'; //Gets only for user logged in
+            $sql = 'SELECT * FROM bsanchez_items WHERE store_id=?;'; //Gets only for user logged in
             $statement = mysqli_stmt_init($conn);
 
             if(!mysqli_stmt_prepare($statement, $sql)) {

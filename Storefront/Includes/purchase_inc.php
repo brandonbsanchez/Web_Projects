@@ -10,7 +10,7 @@ if(isset($_POST['purchase'])){ //User got here legitimately
         header('Location: ../cart.php?error=noitems');
         exit();
     }
-    $sql = 'INSERT INTO orders VALUES (DEFAULT, ?, NOW());'; //(order_id, user_id, date_time)
+    $sql = 'INSERT INTO bsanchez_orders VALUES (DEFAULT, ?, NOW());'; //(order_id, user_id, date_time)
     $statement = mysqli_stmt_init($conn);
     
     if(!mysqli_stmt_prepare($statement, $sql)) { //If statement fails
@@ -22,7 +22,7 @@ if(isset($_POST['purchase'])){ //User got here legitimately
         mysqli_stmt_execute($statement);
         $_SESSION['balance'] -= $_SESSION['cart_total'];
         $_SESSION['cart_total'] = 0;
-        $sql = 'SELECT order_id FROM orders ORDER BY order_id DESC LIMIT 1;'; //Selects last order id
+        $sql = 'SELECT order_id FROM bsanchez_orders ORDER BY order_id DESC LIMIT 1;'; //Selects last order id
         $statement = mysqli_stmt_init($conn);
     
         if(!mysqli_stmt_prepare($statement, $sql)) { //If statement fails
@@ -37,7 +37,7 @@ if(isset($_POST['purchase'])){ //User got here legitimately
             if($row = mysqli_fetch_assoc($result)) { //Puts result into array
                 $order_id = $row['order_id']; //Checks if passwords match
                 
-                $sql = 'INSERT INTO order_items SELECT o.order_id, c.item_id, c.quantity FROM carts c JOIN orders o
+                $sql = 'INSERT INTO bsanchez_order_items SELECT o.order_id, c.item_id, c.quantity FROM bsanchez_carts c JOIN bsanchez_orders o
                 ON o.user_id = c.user_id WHERE c.user_id=? AND o.order_id=?'; //Copies cart items into order items
                 $statement = mysqli_stmt_init($conn);
 
@@ -49,7 +49,7 @@ if(isset($_POST['purchase'])){ //User got here legitimately
                     mysqli_stmt_bind_param($statement, 'ii', $user_id, $order_id); //Inputs variables into ?
                     mysqli_stmt_execute($statement);
 
-                    $sql = 'DELETE FROM carts WHERE user_id=?'; //(order_id, user_id, date_time)
+                    $sql = 'DELETE FROM bsanchez_carts WHERE user_id=?'; //(order_id, user_id, date_time)
                     $statement = mysqli_stmt_init($conn);
                     
                     if(!mysqli_stmt_prepare($statement, $sql)) { //If statement fails
