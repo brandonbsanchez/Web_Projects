@@ -43,10 +43,10 @@
             <h2>Add Balance</h2>
             <div class="bottom_card">
                 <form method="POST" action="Includes/addbalance_inc.php">
-                    <?php echo '<p>Current Balance: $'.$_SESSION['balance'].'</p>'; ?>
-                    <p>Amount to Add</p>
+                    <p id="amount_add">Amount to Add</p>
                     <input class="input" type="text" name="dollars"><br>
-                    <button class="button" type="submit" name="add_balance">Add To Balance</button><br>
+                    <?php echo '<p id="current_balance">Current Balance: $'.$_SESSION['balance'].'</p>'; ?>
+                    <button class="button" id="add_balance" type="submit" name="add_balance">Add To Balance</button><br>
                 </form>
             </div>
         </div>
@@ -55,9 +55,9 @@
             <h2>Purchase Items</h2>
             <div class="bottom_card">
                 <a href="pastorders.php">View Past Orders</a>
-                <?php echo '<p>Cart Total:   $'.$_SESSION['cart_total'].'</p>'; ?>
+                <?php echo '<p id="cart_total">Cart Total:   $'.$_SESSION['cart_total'].'</p>'; ?>
                 <form method="POST" action="Includes/purchase_inc.php">
-                    <button class="button" type="submit" name="purchase">Purchase</button>
+                    <button class="button" id="purchase" type="submit" name="purchase">Purchase</button>
                 </form>
             </div>
         </div>

@@ -32,10 +32,10 @@
                         <p class="item_descr top description">'.$row['description'].'</p>
                         <p class="item_descr num_in_stock">Number in Stock: '.$row['num_in_stock'].'</p>
                         <p class="item_descr unit_price">Unit Price: $'.$row['unit_price'].'</p>
-                        <p>Number to Purchase</p>
+                        <p class="num_to_purch">Number to Purchase</p>
                         <form method="POST" action="Includes/purchaseitem_inc.php">
                         <input type="text" name="num_to_purch" class="input">
-                        <button class="edit_item button" name="purchase_item" type="submit" value='.$row['item_id'].'>Add to Cart</button>
+                        <button class="button" name="purchase_item" type="submit" value='.$row['item_id'].'>Add to Cart</button>
                         </form>
                     </div>
                     </div>';
