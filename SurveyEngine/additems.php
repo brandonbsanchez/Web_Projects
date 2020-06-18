@@ -2,24 +2,24 @@
     require 'header.php';
 
     if(isset($_POST['add_item'])) {
-        $_SESSION['store_id'] = $_POST['add_item'];
+        $_SESSION['survey_id'] = $_POST['add_item'];
     }
 ?>
 
 <main>
-    <h1>Items</h1>
+    <h1>Questions</h1>
     <div id="container">
         <?php
             include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 
-            $sql = 'SELECT * FROM bsanchez_items WHERE store_id=?;'; //Gets only for user logged in
+            $sql = 'SELECT * FROM bsanchez_items WHERE survey_id=?;'; //Gets only for user logged in
             $statement = mysqli_stmt_init($conn);
 
             if(!mysqli_stmt_prepare($statement, $sql)) {
                 echo "Failed sql";
             }
             else {
-                mysqli_stmt_bind_param($statement, 'i', $_SESSION['store_id']);
+                mysqli_stmt_bind_param($statement, 'i', $_SESSION['survey_id']);
                 mysqli_stmt_execute($statement);
                 $result = mysqli_stmt_get_result($statement);
 
@@ -44,7 +44,7 @@
             }
         ?>
         <div id="add_store">
-            <h2>Add Item</h2>
+            <h2>Add Question</h2>
             <form method="POST" action="Includes/additem_inc.php" enctype="multipart/form-data" class="form">
                 <p class="store_name">Item Name</p>
                 <input type="text" name="item_name" class="input">
