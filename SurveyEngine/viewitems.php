@@ -8,7 +8,7 @@
 
 <main>
     <h1 id="balance_title">Survey</h1>
-    <form>
+    <form method="POST" action="Includes/surveytaken_inc.php">
     <?php
         include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 
@@ -30,16 +30,12 @@
                 if($i != 0) {
                     if($past_question_id != $question_id) {
                         echo '<h3>'.$row['question'].'</h3>';
-                        //echo '<input type="radio">';
                     }
                 }
                 else {
                     echo '<h3>'.$row['question'].'</h3>';
-                    //echo '<input type="radio">';
                 }
-                    // echo '<h3 id="top_order" class="order_date">Order On '.$row['date_time'].'</h3>';
-                    // echo '<div id="container">';
-                    echo '<input type="radio" name="'.$row['question_id'].'">';
+                    echo '<input type="radio" name='.$i.' value='.$row['response_id'].'>';
                     echo '<span>'.$row['response'].'</span><br>';
                 $past_question_id = $question_id;
                 $i++;
@@ -47,7 +43,7 @@
             $_SESSION['num_questions'] = $i;
         }
     ?>
-    <button type="submit" class="button">Submit Survey</button>
+    <button type="submit" class="button" name="survey_taken">Submit Survey</button>
     </form>
 </main>
 
