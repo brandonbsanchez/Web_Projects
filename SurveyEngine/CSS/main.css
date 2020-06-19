@@ -181,7 +181,7 @@ main #purchase {
     margin-top: 3em;
 }
 main #your_stores {
-    margin-top: 2.9em;
+    margin-top: 3.5em;
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -194,6 +194,26 @@ main .manage_descr {
 }
 main .edit_store {
     margin-top: 1.1em;
+}
+main #thanks {
+    margin-left: 2em;
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+main #survey_form {
+    margin-left: 2em;
+}
+main .add_item {
+    margin-top: 2.1em;
+}
+main #questions {
+    margin-left: 2em;
+}
+main .space_fix {
+    margin-top: 1em;
+}
+main .delete_response {
+    margin-top: 5.5em;
 }
 @media only screen and (min-width: 700px) {
     main #container {

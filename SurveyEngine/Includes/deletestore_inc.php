@@ -2,7 +2,7 @@
 
 if(isset($_POST['delete_store'])) { //User got here legitimately
     include_once 'dbh_inc.php';
-    //include_once 'deletestoreitems_inc.php';
+    include_once 'deletestoreitems_inc.php';
     
     $survey_id = $_POST['delete_store'];
 

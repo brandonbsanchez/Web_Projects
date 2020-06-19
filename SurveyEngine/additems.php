@@ -31,7 +31,6 @@
                         <form method="POST" action="addresponses.php">
                         <button class="add_item button" type="submit" name="add_item" value='.$row['question_id'].'>Add Responses</button>
                         </form>
-                        <button class="edit_item button" type="button" value='.$row['question_id'].'>Edit Question</button>
                         <form method="POST" action="Includes/deleteitem_inc.php">
                         <button class="button delete" type="submit" name="delete_item" value='.$row['question_id'].'>Delete Question</button>
                         </form>
@@ -49,7 +48,6 @@
             </form>
         </div>
     </div>
-    <script src="Javascript/edititem.js"></script>
 </main>
 
 <?php

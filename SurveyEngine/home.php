@@ -3,6 +3,12 @@
 ?>
 
 <main>
+    <?php
+        if(isset($_GET['taken']))
+        {
+            echo '<p id="thanks">Thank you for taking the survey!</p>';
+        }
+    ?>
     <h1>Surveys</h1>
     <div id="container">
     <?php

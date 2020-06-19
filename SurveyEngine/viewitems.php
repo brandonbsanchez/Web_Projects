@@ -8,7 +8,7 @@
 
 <main>
     <h1 id="balance_title">Survey</h1>
-    <form method="POST" action="Includes/surveytaken_inc.php">
+    <form method="POST" action="Includes/surveytaken_inc.php" id="survey_form">
     <?php
         include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 

@@ -7,8 +7,9 @@
 ?>
 
 <main>
-    <h1>Your Surveys</h1>
-    <div id="container">
+    <h1>Your Responses</h1>
+    <a href="additems.php" id="questions">Back to Questions</a>
+    <div id="container" class="space_fix">
         <?php
             include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 
@@ -28,9 +29,8 @@
                     <h2>Response</h2>
                     <div class="bottom_card">
                         <p class="manage_descr">'.$row['response'].'</p>
-                        <button class="edit_store button" type="button" value='.$row['response_id'].'>Edit Response</button><br>
                         <form method="POST" action="Includes/deleteresponse_inc.php">
-                        <button type="submit" name="delete_store" value='.$row['response_id'].' class="delete button">Delete Response</button>
+                        <button type="submit" name="delete_store" value='.$row['response_id'].' class="delete button delete_response">Delete Response</button>
                         </form>
                     </div>
                     </div>';

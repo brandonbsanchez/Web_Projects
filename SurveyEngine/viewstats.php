@@ -49,7 +49,7 @@
                 else {
                     echo '<h3>'.$row['question'].'</h3>';
                 }
-                $percent = $row['num_responses'] / $survey_responses;
+                $percent = 100 * $row['num_responses'] / $survey_responses;
                 $percent_format = number_format((float)$percent, 2, '.', '');
                 echo '<p>'.$row['response'].' (Frequency = '.$row['num_responses'].', '.$percent_format.'%)</p>';
                 $past_question_id = $question_id;
@@ -58,7 +58,6 @@
             $_SESSION['num_questions'] = $i;
         }
     ?>
-    <button type="submit" class="button" name="survey_taken">Submit Survey</button>
 </main>
 
 <?php
