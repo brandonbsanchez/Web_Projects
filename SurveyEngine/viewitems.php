@@ -2,48 +2,53 @@
     require 'header.php';
 
     if(isset($_POST['add_item'])) {
-        $_SESSION['store_id'] = $_POST['add_item'];
+        $_SESSION['survey_id'] = $_POST['add_item'];
     }
 ?>
 
 <main>
-    <h1 id="balance_title">Items</h1>
-    <?php echo '<p id="balance">Balance: $'.$_SESSION['balance'].'</p>'; ?>
-    <div id="container">
-        <?php
-            include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
+    <h1 id="balance_title">Survey</h1>
+    <form>
+    <?php
+        include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 
-            $sql = 'SELECT * FROM bsanchez_items WHERE store_id=?;'; //Gets only for user logged in
-            $statement = mysqli_stmt_init($conn);
+        $sql = 'SELECT * FROM bsanchez_se_questions q JOIN bsanchez_se_responses r ON q.question_id = r.question_id 
+        WHERE q.survey_id=?;'; //Gets only for user logged in
+        $statement = mysqli_stmt_init($conn);
 
-            if(!mysqli_stmt_prepare($statement, $sql)) {
-                echo "Failed sql";
-            }
-            else {
-                mysqli_stmt_bind_param($statement, 'i', $_SESSION['store_id']);
-                mysqli_stmt_execute($statement);
-                $result = mysqli_stmt_get_result($statement);
+        if(!mysqli_stmt_prepare($statement, $sql)) {
+            echo "Failed sql";
+        }
+        else {
+            mysqli_stmt_bind_param($statement, 'i', $_SESSION['survey_id']);
+            mysqli_stmt_execute($statement);
+            $result = mysqli_stmt_get_result($statement);
+            $i = 0;
 
-                while($row = mysqli_fetch_assoc($result)) { //Each one is an item card
-                    $format_price = number_format((float)$row['unit_price'], 2, '.', '');
-                    echo '<div class="store_card" id="item_'.$row['item_id'].'">
-                    <h2>'.$row['name'].'</h2>
-                    <div class="bottom_card">
-                        <img src="Uploads/Item/'.$row['img_dest'].'" height=80px>
-                        <p class="item_descr top description">'.$row['description'].'</p>
-                        <p class="item_descr num_in_stock"><span class="bold">Number in Stock: </span>'.$row['num_in_stock'].'</p>
-                        <p class="item_descr unit_price"><span class="bold">Unit Price: </span>$'.$format_price.'</p>
-                        <p class="num_to_purch">Number to Purchase</p>
-                        <form method="POST" action="Includes/purchaseitem_inc.php">
-                        <input type="text" name="num_to_purch" class="input">
-                        <button class="button" name="purchase_item" type="submit" value='.$row['item_id'].'>Add to Cart</button>
-                        </form>
-                    </div>
-                    </div>';
+            while($row = mysqli_fetch_assoc($result)) { //Each one is an item card
+                $question_id = $row['question_id'];
+                if($i != 0) {
+                    if($past_question_id != $question_id) {
+                        echo '<h3>'.$row['question'].'</h3>';
+                        //echo '<input type="radio">';
+                    }
                 }
+                else {
+                    echo '<h3>'.$row['question'].'</h3>';
+                    //echo '<input type="radio">';
+                }
+                    // echo '<h3 id="top_order" class="order_date">Order On '.$row['date_time'].'</h3>';
+                    // echo '<div id="container">';
+                    echo '<input type="radio" name="'.$row['question_id'].'">';
+                    echo '<span>'.$row['response'].'</span><br>';
+                $past_question_id = $question_id;
+                $i++;
             }
-        ?>
-    </div>
+            $_SESSION['num_questions'] = $i;
+        }
+    ?>
+    <button type="submit" class="button">Submit Survey</button>
+    </form>
 </main>
 
 <?php
