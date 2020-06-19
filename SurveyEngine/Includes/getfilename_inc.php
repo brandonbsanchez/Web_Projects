@@ -3,7 +3,7 @@
 include_once 'dbh_inc.php';
 session_start();
 $store_id = $_POST['edit_store'];
-$sql = 'SELECT * FROM bsanchez_stores WHERE store_id=?;';
+$sql = 'SELECT * FROM bsanchez_se_surveys WHERE survey_id=?;';
 $statement = mysqli_stmt_init($conn);
 
 if(!mysqli_stmt_prepare($statement, $sql)) { //If connection fails

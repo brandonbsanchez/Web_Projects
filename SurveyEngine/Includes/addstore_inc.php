@@ -46,11 +46,11 @@ if(isset($_POST['store_submit'])){ //User got here legitimately
                     exit();
                 }
                 else {
-                    $sql = 'INSERT INTO bsanchez_se_surveys VALUES (DEFAULT, ?, ?, ?, ?, DEFAULT);'; //(survey_id, user_id, name, description, img_dest)
+                    $sql = 'INSERT INTO bsanchez_se_surveys VALUES (DEFAULT, ?, ?, ?, ?);'; //(survey_id, user_id, name, description, img_dest)
                     $statement = mysqli_stmt_init($conn);
 
                     if(!mysqli_stmt_prepare($statement, $sql)) { //If statement fails
-                        echo 'SQL Failed';
+                        echo mysqli_error($conn);
                         exit();
                     }
                     else {

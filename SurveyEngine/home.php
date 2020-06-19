@@ -3,7 +3,7 @@
 ?>
 
 <main>
-    <h1>Stores</h1>
+    <h1>Surveys</h1>
     <div id="container">
     <?php
         include_once 'includes/dbh_inc.php'; //So it doesn't get called twice

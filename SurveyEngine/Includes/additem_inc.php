@@ -12,7 +12,7 @@ if(isset($_POST['item_submit'])){ //User got here legitimately
         exit();
     }
     else {
-        $sql = 'INSERT INTO bsanchez_se_questions VALUES (DEFAULT, ?, ?);'; //(item_id, store_id, name, descr, img_dest, num_in_stock, unit_price)
+        $sql = 'INSERT INTO bsanchez_se_questions VALUES (DEFAULT, ?, ?);'; //(survey_id, user_id, question)
         $statement = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($statement, $sql)) { //If statement fails

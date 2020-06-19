@@ -41,7 +41,7 @@ if(isset($_POST['signup_submit'])) { //Prevents user typing file in browser
                 exit();
             }
             else {
-                $sql = "INSERT INTO bsanchez_se_users VALUES (DEFAULT, ?, ?, DEFAULT);"; //(id, username, password, balance=0)
+                $sql = "INSERT INTO bsanchez_se_users VALUES (DEFAULT, ?, ?);"; //(id, username, password)
                 $statement = mysqli_stmt_init($conn);
 
                 if(!mysqli_stmt_prepare($statement, $sql)) { //If connection fails

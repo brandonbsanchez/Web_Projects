@@ -57,11 +57,11 @@ if(isset($_POST['edit_store'])){ //User got here legitimately
                     if(!$is_default && $_SESSION['img_dest'] != 'default.jpg') { //If image changed and not default image
                         include_once 'deletefile_inc.php'; //Deletes previous image
                     }
-                    $sql = 'UPDATE bsanchez_stores SET name=?, description=?, img_dest=? WHERE store_id=?;';
+                    $sql = 'UPDATE bsanchez_se_surveys SET name=?, description=?, img_dest=? WHERE survey_id=?;';
                     $statement = mysqli_stmt_init($conn);
 
                     if(!mysqli_stmt_prepare($statement, $sql)) { //If statement fails
-                        echo 'SQL Failed';
+                        echo mysqli_error($conn);
                         exit();
                     }
                     else {
