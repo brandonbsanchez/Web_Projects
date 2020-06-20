@@ -8,6 +8,7 @@
 
 <main>
     <h1 id="balance_title">Survey</h1>
+    <div id="survey_form">
     <?php
         include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 
@@ -27,7 +28,7 @@
         }
 
         $sql = 'SELECT * FROM bsanchez_se_questions q JOIN bsanchez_se_responses r ON q.question_id = r.question_id 
-        WHERE q.survey_id=?;'; //Gets only for user logged in
+        WHERE q.survey_id=? ORDER BY q.question_id;'; //Gets only for user logged in
         $statement = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($statement, $sql)) {
@@ -43,21 +44,23 @@
                 $question_id = $row['question_id'];
                 if($i != 0) {
                     if($past_question_id != $question_id) {
-                        echo '<h3>'.$row['question'].'</h3>';
+                        echo '<h3 class="h3_question">'.$row['question'].'</h3>';
+                        $i++;
                     }
                 }
                 else {
-                    echo '<h3>'.$row['question'].'</h3>';
+                    echo '<h3 class="h3_question">'.$row['question'].'</h3>';
+                    $i++;
                 }
                 $percent = 100 * $row['num_responses'] / $survey_responses;
                 $percent_format = number_format((float)$percent, 2, '.', '');
-                echo '<p>'.$row['response'].' (Frequency = '.$row['num_responses'].', '.$percent_format.'%)</p>';
+                echo '<p class="radio_button">'.$row['response'].' (Frequency = '.$row['num_responses'].', '.$percent_format.'%)</p>';
                 $past_question_id = $question_id;
-                $i++;
             }
             $_SESSION['num_questions'] = $i;
         }
     ?>
+    </div>
 </main>
 
 <?php

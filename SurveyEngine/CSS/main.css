@@ -215,6 +215,14 @@ main .space_fix {
 main .delete_response {
     margin-top: 5.5em;
 }
+main .h3_question {
+    margin-top: 1em;
+    font-size: 1.3em;
+}
+main .radio_button {
+    margin-top: .3em;
+    margin-bottom: .3em;
+}
 @media only screen and (min-width: 700px) {
     main #container {
         justify-content: flex-start;

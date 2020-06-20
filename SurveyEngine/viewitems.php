@@ -13,7 +13,7 @@
         include_once 'includes/dbh_inc.php'; //So it doesn't get called twice
 
         $sql = 'SELECT * FROM bsanchez_se_questions q JOIN bsanchez_se_responses r ON q.question_id = r.question_id 
-        WHERE q.survey_id=?;'; //Gets only for user logged in
+        WHERE q.survey_id=? ORDER BY q.question_id;'; //Gets only for user logged in
         $statement = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($statement, $sql)) {
@@ -29,16 +29,17 @@
                 $question_id = $row['question_id'];
                 if($i != 0) {
                     if($past_question_id != $question_id) {
-                        echo '<h3>'.$row['question'].'</h3>';
+                        echo '<h3 class="h3_question">'.$row['question'].'</h3>';
+                        $i++;
                     }
                 }
                 else {
-                    echo '<h3>'.$row['question'].'</h3>';
+                    echo '<h3 class="h3_question">'.$row['question'].'</h3>';
+                    $i++;
                 }
-                    echo '<input type="radio" name='.$i.' value='.$row['response_id'].'>';
+                    echo '<input type="radio" name='.($i - 1).' value='.$row['response_id'].' class="radio_button" required>';
                     echo '<span>'.$row['response'].'</span><br>';
                 $past_question_id = $question_id;
-                $i++;
             }
             $_SESSION['num_questions'] = $i;
         }
