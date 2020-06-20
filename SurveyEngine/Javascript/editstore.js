@@ -47,7 +47,7 @@ function revert(css_id, store_id, store_name, descr, img_loc) {
                         <button class="edit_store button" type="button" value=${store_id}>Edit Store</button>
                         </form>
                         <form method="POST" action="additems.php">
-                        <button class="add_item button" type="submit" name="add_item" value=${store_id}>Add Items</button>
+                        <button class="add_item button" type="submit" name="add_item" value=${store_id}>Add Questions</button>
                         </form>
                         <form method="POST" action="Includes/deletestore_inc.php">
                         <button class="delete button" type="submit" name="delete_store" value=${store_id}>Delete Store</button>

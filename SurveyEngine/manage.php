@@ -46,7 +46,7 @@
                 <input type="text" name="description" class="input">
                 <p class="add_image">Add Image (Optional)</p>
                 <input type="file" name="file"><br>
-                <input type="submit" value="Add Store" name="store_submit" class="button" id="your_stores">
+                <input type="submit" value="Add Survey" name="store_submit" class="button" id="your_stores">
             </form>
         </div>
     </div>

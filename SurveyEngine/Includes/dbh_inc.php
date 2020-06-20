@@ -2,10 +2,10 @@
 
 //Database handler/connector
 
-$server_name = 'localhost';
-$username = 'root';
-$password = '42069';
-$database_name = 'surveyengine';
+$server_name = '209.129.8.7';
+$username = 'RCCCSCCIS17B';
+$password = '4050240368';
+$database_name = 'RCCCSCCIS17B';
 
 $conn = mysqli_connect($server_name, $username, $password, $database_name);
 

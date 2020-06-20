@@ -44,7 +44,7 @@
             <form method="POST" action="Includes/additem_inc.php" class="form">
                 <p class="store_name">Question</p>
                 <input type="text" name="item_name" class="input">
-                <input class="button" type="submit" value="Add Item" name="item_submit" id="add_button">
+                <input class="button" type="submit" value="Add Question" name="item_submit" id="add_button">
             </form>
         </div>
     </div>
