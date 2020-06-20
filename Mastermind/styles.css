@@ -1,0 +1,91 @@
+h1 {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0.1em;
+}
+table { 
+    border-spacing: 0em 0.15em;
+    background-color: #A9A9A9;
+    border: 1px solid black;
+}
+tr {
+    background-color: black;
+    margin: 0em;
+}
+.headerRow {
+    background-color: #61605e;
+}
+td {
+    margin: 0em;
+    padding: 0em;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+.mainBall, .clickBall {
+    padding: 1.4em;
+    margin: 0.25em;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+.headerBall {
+    padding: 1.4em;
+    margin: 0.25em;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    height: 0px;
+    width: 0px;
+}
+.endBall {
+    padding: 0.7em;
+    border-radius: 50%;
+    background-color: #bbb;
+    width: 0;
+    flex: 0 1 auto;
+}
+form {
+    text-align: center;
+}
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
+.yellow {
+    background-color: yellow;
+}
+.brown {
+    background-color: brown;
+}
+.orange {
+    background-color: orange;
+}
+.black {
+    background-color: purple;
+}
+.white {
+    background-color: white;
+}
+#selected {
+    border: 3px solid red;
+}
+.end {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 6em;
+}
+#colorHidden {
+    background-color: lightgray;
+}
+#check {
+    margin-left: 7em;
+    margin-right: 0;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mastermind</title>
+        <link rel="stylesheet" href="styles.css"></link>
+    </head>
+    <body>
+        <h1>Mastermind</h1>
+        <table>
+        </table>
+        <form>
+            <button type="button" class="clickBall red" value="red"></button>
+            <button type="button" class="clickBall green" value="green"></button>
+            <button type="button" class="clickBall blue" value="blue"></button>
+            <button type="button" class="clickBall yellow" value="yellow"></button>
+            <br>
+            <button type="button" class="clickBall brown" value="brown"></button>
+            <button type="button" class="clickBall orange" value="orange"></button>
+            <button type="button" class="clickBall black" value="black"></button>
+            <button type="button" class="clickBall white" value="white"></button>
+
+            <br>
+            <select id="changeColumns">
+                <option value=4>4</option>
+                <option value=6>6</option>
+                <option value=8>8</option>
+            </select>
+            <button type="button" id="newGame">New Game</button>
+            <button type="button" id="check">Check</button>
+            <p>Move Left - A | Move Right - D</p>
+        </form>
+    </body>
+    <script src="app.js"></script>
+</html>
